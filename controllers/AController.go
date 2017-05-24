@@ -38,6 +38,9 @@ func (this *AController) Get() {
 	this.Ctx.WriteString("This is a interface!\n")
 }
 
+/*
+将post请求的参数直接解析在struct中
+*/
 func (this *AController) Post() {
 	var book Book
 	json.Unmarshal(this.Ctx.Input.RequestBody, &book)
