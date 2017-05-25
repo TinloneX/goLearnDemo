@@ -12,4 +12,8 @@ func init() {
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/a", &controllers.AController{})
 	beego.Router("/file", &controllers.FileController{})
+	beego.Router("/api/list", &controllers.Url4Controller{}, "*:List")
+	beego.Router("/person/:last/:first", &controllers.Url4Controller{})
+	beego.AutoRouter(&controllers.Url4Controller{})
+	beego.Router("/response", &controllers.ResponseController{})
 }
